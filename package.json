@@ -1,0 +1,25 @@
+{
+  "name": "personal-site",
+  "version": "0.0.1",
+  "description": "Personal site for Kyle Coberly",
+  "main": "speaking.ts",
+  "scripts": {
+    "test": "mocha",
+    "build": "watchify speaking.ts -p [ tsify ] -o speaking.js"
+  },
+  "author": "Kyle Coberly",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.7.8",
+    "lodash": "^4.17.11",
+    "showdown": "^1.9.0",
+    "tsify": "^4.0.1",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.119",
+    "@types/showdown": "^1.9.0",
+    "handlebars": "^4.0.12",
+    "watchify": "^3.11.0"
+  }
+}
