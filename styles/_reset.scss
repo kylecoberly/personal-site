@@ -46,6 +46,42 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 * {
     box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+}
+
+p + p {
+    margin-top: $xl;
+}
+
+em {
+    font-style: italic;
+}
+
+img {
+    width: 100%;
+    margin-top: $baseline;
+    margin-bottom: $baseline;
+}
+
+ul {
+    list-style: circle;
+    margin-top: $xxs;
+    margin-bottom: $xxs;
+}
+
+li {
+    display: list-item;
+    margin-bottom: $xxs;
+    margin-left: $xxl;
+}
+
+address, time {
+    display: inline-block;
+    font-style: italic;
 }

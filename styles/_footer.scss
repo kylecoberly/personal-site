@@ -1,0 +1,15 @@
+#social {
+    width: 100%;
+    padding: $baseline;
+    text-align: right;
+    li {
+        display: inline-block;
+        padding: $xxs;
+        margin: 0;
+        a {
+            font-size: $xl;
+            color: $medium-gray;
+        }
+    }
+}
+

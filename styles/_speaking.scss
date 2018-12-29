@@ -1,0 +1,32 @@
+#speaking {
+    .content-wrapper {
+        max-width: 40rem;
+        flex: 1;
+        @media (max-width: $medium-breakpoint) {
+            & {
+                margin: 0 $xxs $baseline $xxs;
+            }
+        }
+    }
+    #talks {
+        margin-top: $xxl;
+        @media (max-width: $medium-breakpoint) {
+            & {
+                margin-top: 0;
+            }
+        }
+        h3 {
+            font-size: $xxl;
+            margin-bottom: $baseline;
+        }
+        li {
+            width: 100%;
+            margin: 0 0 $baseline 0;
+            padding: $xxl;
+            background-color: $white;
+            list-style-type: none;
+            border-radius: 4px;
+            box-shadow: 0 0 4px $light-gray; 
+        }
+    }
+}

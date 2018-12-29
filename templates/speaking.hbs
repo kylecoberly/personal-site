@@ -1,0 +1,14 @@
+{{#extend "main"}}
+    {{#content "main"}}
+        <div class="content-wrapper">
+            <ul id="talks">
+                {{#each talks}}
+                    <li>
+                        <h3><a href="talks/{{slug}}/index.html">{{title}}</a></h3>
+                        <address>{{venue}}</address> – <time>{{date}}</time>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/content}}
+{{/extend}}

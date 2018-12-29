@@ -1,0 +1,65 @@
+@mixin body-type {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    line-height: $xxxl; 
+    font-size: $xl;
+    color: $black;
+    @media (max-width: $medium-breakpoint) {
+        & {
+            line-height: $xxl; 
+            font-size: $large;
+        }
+    }
+    @media (max-width: $small-breakpoint) {
+        & {
+            line-height: $xl; 
+            font-size: $baseline;
+        }
+    }
+}
+
+@mixin primary-header-type {
+    font-family: "Staatliches", cursive;
+    font-size: $xxxxl;
+    word-spacing: 4px;
+    line-height: $xxxxl;
+}
+
+@mixin secondary-header-type {
+    font-family: "Roboto Slab", serif;
+    font-size: $xxl;
+    word-spacing: 4px;
+    margin-bottom: $baseline;
+    font-weight: 700;
+    line-height: $xxl;
+    @media (max-width: $medium-breakpoint) {
+        & {
+            line-height: $xxl; 
+            font-size: $xxl;
+        }
+    }
+    @media (max-width: $small-breakpoint) {
+        & {
+            line-height: $xl; 
+            font-size: $xl;
+        }
+    }
+}
+
+@mixin tertiary-header-type {
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    margin-bottom: $xxs;
+}
+
+@mixin primary-nav-type {
+    font-family: "Staatliches", cursive;
+    font-size: $xl;
+}
+
+@mixin tagline-type {
+    font-family: "Staatliches", cursive;
+    font-size: $large;
+    word-spacing: 2px;
+    margin-bottom: $baseline;
+}

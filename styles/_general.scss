@@ -1,0 +1,27 @@
+@mixin content-area {
+    max-width: 40rem;
+    margin-bottom: $baseline;
+    margin-top: $xxl;
+    background-color: $white;
+    padding: $xxl;
+    border-radius: 4px;
+    box-shadow: 0 0 4px $light-gray;
+    flex: 1;
+    @media (max-width: $medium-breakpoint) {
+        & {
+            padding: $baseline;
+            margin: 0 $xxs $baseline $xxs;
+        }
+    }
+}
+
+@mixin striped-background {
+    background: linear-gradient(
+        to bottom,
+        lighten($primary-color, 30%),
+        lighten($primary-color, 35%) 50%,
+        lighten($primary-color, 35%) 50%,
+        lighten($primary-color, 30%),
+    );
+    background-size: 100% $large;
+}

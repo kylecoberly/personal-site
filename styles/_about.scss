@@ -1,0 +1,11 @@
+#about {
+    .content-wrapper {
+        @include content-area;
+        @media (max-width: $medium-breakpoint) {
+            li {
+                margin-left: $xxs;
+            }
+        }
+    }
+}
+
