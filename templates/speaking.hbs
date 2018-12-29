@@ -3,9 +3,14 @@
         <div class="content-wrapper">
             <ul id="talks">
                 {{#each talks}}
-                    <li>
-                        <h3><a href="/talks/{{slug}}">{{title}}</a></h3>
-                        <address>{{venue}}</address> – <time>{{date}}</time>
+                    <li class="talk">
+                        <img class="icon" src="{{iconUrl}}" />
+                        <div class="details">
+                            <h3><a href="/talks/{{slug}}">{{title}}</a></h3>
+                            <div class="byline">
+                                <address>{{venue}}</address> – <time>{{date}}</time>
+                            </div>
+                        </div>
                     </li>
                 {{/each}}
             </ul>

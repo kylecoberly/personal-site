@@ -16,8 +16,10 @@
             }
         }
         h3 {
-            font-size: $xxl;
-            margin-bottom: $baseline;
+            font-size: $large;
+        }
+        .byline {
+            font-size: $baseline;
         }
         li {
             width: 100%;
@@ -27,6 +29,17 @@
             list-style-type: none;
             border-radius: 4px;
             box-shadow: 0 0 4px $light-gray; 
+        }
+        .talk {
+            display: flex;
+            flex-flow: row nowrap;
+            .icon {
+                width: 100px;
+            }
+            .details {
+                flex: 1;
+                padding-left: $baseline;
+            }
         }
     }
 }
