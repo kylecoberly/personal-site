@@ -1,19 +1,18 @@
 {
   "name": "personal-site",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Personal site for Kyle Coberly",
   "scripts": {
     "build": "npm run build:clean && npm run build:style && npm run build:templates && npm run build:copy",
     "build:clean": "rm -rf dist/*",
     "build:style": "sassc styles/app.scss dist/app.css",
     "build:templates": "node scripts/compile-templates.js",
-    "build:copy": "cp -r assets dist"
+    "build:copy": "cp -r assets dist",
+    "deploy": "npm run build && firebase deploy"
   },
   "author": "Kyle Coberly",
   "license": "ISC",
   "devDependencies": {
-    "@types/lodash": "^4.14.119",
-    "@types/showdown": "^1.9.0",
     "dayjs": "^1.7.8",
     "handlebars": "^4.0.12",
     "handlebars-layouts": "^3.1.4",
