@@ -13,9 +13,9 @@ async function initialize() {
     handlebars.registerPartial("main", layout);
 
     await writeTemplate("404");
-    await writeTemplate("about", { page: "about" });
+    await writeTemplate("about", { page: "about", isAbout: true });
     await writeTemplate("index", { page: "home" });
-    await writeTemplate("speaking", { page: "speaking", talks: processTalks(talks) });
+    await writeTemplate("speaking", { page: "speaking", talks: processTalks(talks), isSpeaking: true });
     await createTalks();
 }
 

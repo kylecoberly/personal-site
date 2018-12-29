@@ -31,6 +31,12 @@ header {
                     color: inherit;
                 }
             }
+            &.active {
+                a {
+                    text-decoration: none;
+                    font-size: $xxl;
+                }
+            }
         }
     }
 }
