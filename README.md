@@ -1,5 +1,11 @@
 ## Kyle Coberly's Personal Site
 
+Dependencies:
+
+* `node >= 10` - Because `fs.promises`
+* `sassc`
+* `firebase-tools`
+
 To add speaking events, add to `data/talks.js`.
 
 ```js
