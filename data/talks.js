@@ -1,4 +1,108 @@
 module.exports.talks = [{
+    title: "Why Johnny Can't Code: An Evening of Rants About Education With Kyle Coberly",
+    date: "2020-02-20",
+    slug: "why-johnny-cant-code",
+    venue: "Denver Node",
+    videoUrl: "https://www.youtube.com/embed/n1d7AHcNNF0?start=152",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/intro-to-bdd-syntax#/",
+    }],
+    abstract: `
+How do you learn to program? How do you learn anything? Kyle has been teaching for 19 years, and has taught software engineering to over 600 people in Denver. From debunking learning styles to why you should stop obsessing over "the fundamentals", Kyle will answer questions and challenge the things you think you know about technology education.
+
+This talk will be in "Lean Coffee" format, meaning that the audience will control the discussion in real time.
+  `,
+    images: [{
+        altText: "Kyle presenting",
+        url: "/assets/why-johnny-cant-code-talk-1.jpeg",
+    }, {
+        altText: "Kyle presenting",
+        url: "/assets/why-johnny-cant-code-talk-2.jpeg",
+    }, {
+        altText: "Audience",
+        url: "/assets/why-johnny-cant-code-talk-3.jpeg",
+    },{
+        altText: "Education Manifesto",
+        url: "/assets/johnny/education-manifesto.png",
+    },{
+        altText: "Dreyfuss Model",
+        url: "/assets/johnny/dreyfuss-model.png",
+    },{
+        altText: "Brains",
+        url: "/assets/johnny/brains.png",
+    },{
+        altText: "Linear disciplines",
+        url: "/assets/johnny/linear-disciplines.png",
+    },{
+        altText: "Linear math curriculum",
+        url: "/assets/johnny/linear-math.png",
+    },{
+        altText: "Neural networks",
+        url: "/assets/johnny/neural-networks.png",
+    },{
+        altText: "Neuromyths",
+        url: "/assets/johnny/neuromyths.png",
+    },{
+        altText: "Rich vs. linear thinking",
+        url: "/assets/johnny/rich-vs-linear.png",
+    },{
+        altText: "A better fullstack curriculum",
+        url: "/assets/johnny/actual-fullstack-curriculum.png",
+    },{
+        altText: "Topic ghettos",
+        url: "/assets/johnny/topic-ghettos.png",
+    }],
+    iconUrl: "/assets/book.png",
+}, {
+    title: "Intro to BDD Syntax",
+    date: "2019-09-24",
+    slug: "intro-to-bdd-syntax",
+    venue: "DenverScript",
+    videoUrl: "https://www.youtube.com/embed/WB44u-XS3wg?start=884",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/intro-to-bdd-syntax#/",
+    }],
+    images: [{
+        altText: "Kyle presenting",
+        url: "/assets/intro-to-bdd-talk-1.jpeg",
+    }],
+    abstract: "Testing doesn't just increase our confidence with code; it also gives us a powerful tool for documenting and communicating expectations with stakeholders. In this talk, Kyle will introduce you to a business-friendly testing syntax that bridges the gap between describing features and confirming their behavior.",
+    iconUrl: "/assets/agile.jpeg",
+}, {
+    title: "Mind The Gap: Transitioning to Tech Leadership",
+    date: "2019-08-14",
+    slug: "mind-the-gap",
+    venue: "Develop Denver",
+    videoUrl: "https://www.youtube.com/embed/hij_gJk55Z0",
+    abstract: "Leading people is an entirely different skillset from writing code. You can’t `[^ + c]` when people fail. Fortunately, leadership is a skill you can learn as long as you’re willing to risk vulnerability. In this panel you’ll hear stories and learn methods tech leaders have used as they’ve made the move from individual contributors to people leaders. This will be a collaborative session that uses Poll Everywhere to gather topics and questions from the audience. Bring your questions, challenges and stories, and let the community lend their support.",
+    iconUrl: "/assets/briefcase.png",
+}, {
+    title: "What Should I Test?",
+    date: "2019-04-30",
+    slug: "what-should-i-test",
+    venue: "DenverScript",
+    videoUrl: "https://www.youtube.com/embed/BPKoUearxpA?start=1668",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/what-should-i-test#/",
+    }],
+    abstract: "Writing tests is easy, but writing meaningful tests is hard. We'll explore some strategies for figuring out what to test and what to leave alone.",
+    iconUrl: "/assets/agile.jpeg",
+}, {
+    title: "Programming Without Ifs",
+    date: "2019-01-17",
+    slug: "programming-without-ifs",
+    venue: "Denver Node",
+    videoUrl: "https://www.youtube.com/embed/400uu1vwgaM",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/programming-without-ifs#/",
+    }],
+    abstract: "The if statement is one of the first of things we learn as programmers. Should it be one of the first things we take out of our vocabulary as well? We'll talk about what the benefits of programmer without ifs are, as well as learn some tricks for getting rid of them.",
+    iconUrl: "/assets/web.jpg",
+}, {
     title: "Ember Services & State",
     date: "2015-27-05",
     slug: "ember-services-and-state",

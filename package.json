@@ -14,9 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "dayjs": "^1.7.8",
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.7.3",
     "handlebars-layouts": "^3.1.4",
-    "lodash": "^4.17.11",
-    "showdown": "^1.9.0"
+    "lodash": "^4.17.15",
+    "showdown": "^1.9.1"
   }
 }
