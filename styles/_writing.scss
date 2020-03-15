@@ -1,0 +1,258 @@
+#recent-writing {
+  clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -230px; // Override to accomodate path clipping
+  padding-top: 250px; // Override to accomodate path clipping
+  background: linear-gradient(
+    to bottom,
+    transparentize($left-color-9, 0.5),
+    transparentize($left-color-9, 0.6) 50%,
+    transparentize($left-color-9, 0.6) 50%,
+    transparentize($left-color-9, 0.5),
+  );
+  background-size: 100% $xl;
+  @media (max-width: $small-breakpoint) {
+    & {
+      margin-top: -100px; // Override to accomodate path clipping
+      padding-top: 100px; // Override to accomodate path clipping
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+      padding-bottom: $xxl;
+    }
+  }
+  .read-more {
+    display: flex;
+    justify-content: center;
+    a {
+      display: inline-block;
+      padding: $baseline $large;
+      @include primary-nav-type;
+      color: $white;
+      background-color: $left-color-3;
+      box-shadow: 0 2px 2px $gray-5;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: lighten($left-color-3, 5%);
+      }
+    }
+  }
+  .content-item {
+    list-style: none;
+    margin-left: 0;
+    article {
+      margin-left: 0;
+      margin-bottom: $xxxxl;
+      @media (max-width: $medium-breakpoint) {
+        & {
+          margin-bottom: $xxl;
+        }
+      }
+      @media (max-width: $small-breakpoint) {
+        & {
+          margin-bottom: $xl;
+        }
+      }
+      &:nth-child(1){
+        .abstract {
+          transform: rotateZ(1deg);
+          @media (max-width: $small-breakpoint) {
+            & {
+              transform: rotateZ(0);
+            }
+          }
+        }
+      }
+      &:nth-child(2){
+        .abstract {
+          transform: rotateZ(-1deg);
+          @media (max-width: $small-breakpoint) {
+            & {
+              transform: rotateZ(0);
+            }
+          }
+        }
+      }
+      .abstract-and-media {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .abstract {
+          flex: 1;
+          padding: $xxl $xxxl;
+          background-color: $white;
+          background-image: repeating-linear-gradient(white 0px, white $large, transparentize(teal, 0.7) 25px);
+          font-size: $font-large;
+          line-height: 1.4;
+          box-shadow: 0 1px 1px $gray-5;
+          @media (max-width: $medium-breakpoint) {
+            & {
+              padding: $xl $xxl;
+            }
+          }
+          @media (max-width: $small-breakpoint) {
+            & {
+              order: 2;
+              flex: auto;
+              padding: 0;
+              background: none;
+              box-shadow: none;
+            }
+          }
+          p:last-child {
+            margin-bottom: 0;
+          }
+        }
+        .media {
+          flex: 1;
+          img, iframe {
+            margin: 0;
+            box-shadow: 0 2px 2px $gray-5;
+          }
+          @media (max-width: $small-breakpoint) {
+            & {
+              flex: auto;
+              order: 1;
+              margin-bottom: $large;
+            }
+          }
+        }
+      }
+    }
+    &:nth-of-type(even){
+      .abstract {
+        order: 1;
+        padding-right: $large;
+        margin-left: -$xxxl;
+        @media (max-width: $small-breakpoint) {
+          & {
+            margin-left: 0;
+            padding: 0;
+          }
+        }
+      }
+      .media {
+        order: 2;
+        padding-left: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
+      }
+    }
+    &:nth-of-type(odd){
+      .abstract {
+        order: 2;
+        padding-left: $large;
+        margin-right: -$xxxl;
+        @media (max-width: $small-breakpoint) {
+          & {
+            margin-right: 0;
+            padding: 0;
+          }
+        }
+      }
+      .media {
+        order: 1;
+        padding-right: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+  }
+
+  .iframe-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+  }
+}
+
+
+#writing {
+  > header {
+    height: auto;
+    padding: $xxxxxl;
+    position: relative;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
+    }
+  }
+  > main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: $xxxxl 0;
+    background: $white;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
+    }
+  }
+  .talk {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    margin-left: 0;
+    background-color: $white;
+    .details {
+      flex: 8;
+      padding: 0 $large $xxl $large;
+      @media (max-width: $medium-breakpoint) {
+        & {
+          padding: 0 $large;
+        }
+      }
+      .external-link {
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        margin-bottom: -3px; // Visual alignment
+        margin-left: $baseline;
+        background: url("/assets/icons/external.svg");
+        background-size: cover;
+        @media (max-width: $medium-breakpoint) {
+          & {
+            width: 19px;
+            height: 19px;
+            margin-left: $xs;
+            margin-bottom: -2px; // Visual alignment
+          }
+        }
+        @media (max-width: $small-breakpoint) {
+          & {
+            width: 14px;
+            height: 14px;
+            margin-bottom: -1px; // Visual alignment
+          }
+        }
+      }
+      h3 {
+        margin-bottom: $xs;
+        color: $gray-1;
+      }
+      .byline {
+        color: $gray-5;
+      }
+    }
+    .icon {
+      flex: 1;
+      width: $xxxxxl;
+      padding: $large 0;
+      margin: 0;
+    }
+  }
+}

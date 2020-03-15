@@ -1,31 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Staatliches");
 @import "sizes";
-@import "reset";
 @import "colors";
 @import "typography";
+@import "reset";
 @import "general";
 
 @import "header";
 @import "footer";
 @import "home";
 @import "about";
-@import "speaking";
+@import "resume";
+@import "writing";
 @import "talk";
-
-html {
-    font-size: 16px;
-}
-
-body {
-    @include body-type;
-    @include striped-background;
-}
-
-h2 {
-    @include secondary-header-type;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-}
+@import "contact";

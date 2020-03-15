@@ -15,14 +15,16 @@
                 </ul>
             {{/if}}
             {{#if talk.videoUrl}}
+                <h3>Video</h3>
                 <div class="video-container">
                     <iframe src="{{talk.videoUrl}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             {{/if}}
             {{#if talk.images}}
+                <h3>Images</h3>
                 <ul class="images">
                     {{#each talk.images}}
-                        <li><img src="{{url}}" alt="{{altText}}" /></li>
+                        <li><a href="{{url}}"><img src="{{url}}" alt="{{altText}}" /></a></li>
                     {{/each}}
                 </ul>
             {{/if}}

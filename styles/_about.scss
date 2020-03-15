@@ -1,11 +1,49 @@
 #about {
-    .content-wrapper {
-        @include content-area;
-        @media (max-width: $medium-breakpoint) {
-            li {
-                margin-left: $xxs;
-            }
-        }
+  display: flex;
+  justify-content: center;
+  .description-and-portrait {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: $xxxl;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        margin-bottom: $xl;
+      }
     }
+    @media (max-width: $small-breakpoint) {
+      & {
+        margin-bottom: $large;
+      }
+    }
+    .portrait {
+      flex: 2;
+      padding-left: $xl;
+      img {
+        margin: 0;
+        box-shadow: 0 2px 2px $gray-5;
+      }
+      @media (max-width: $small-breakpoint) {
+        & {
+          padding-left: 0;
+          flex: auto;
+        }
+      }
+    }
+    .description {
+      flex: 3;
+      font-size: $font-xxl;
+      @media (max-width: $medium-breakpoint) {
+        & {
+          font-size: $font-large;
+        }
+      }
+      @media (max-width: $small-breakpoint) {
+        & {
+          flex: auto;
+          font-size: $font-baseline;
+          margin-bottom: $large;
+        }
+      }
+    }
+  }
 }
-
