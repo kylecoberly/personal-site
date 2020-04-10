@@ -1,42 +1,29 @@
 header {
-    padding: $xxl;
-    @media (max-width: $medium-breakpoint) {
-        & {
-            padding: $baseline $xxs;
-        }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparentize($primary-color, 0.3);
+  height: 100vh;
+  .content-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    h1, #tagline {
+      align-self: flex-start;
     }
     h1 {
-        @include primary-header-type;
-        a {
-            text-decoration: none;
-        }
+      color: $white;
     }
-
-    #tagline {
-        @include tagline-type;
-    }
-
     nav {
-        li {
-            display: inline-block;
-            margin: 0;
-            a {
-                @include primary-nav-type;
-            }
-            & + li {
-                margin-left: $xxs;
-                &:before {
-                    content: "\2022";
-                    margin-right: $xxs;
-                    color: inherit;
-                }
-            }
-            &.active {
-                a {
-                    text-decoration: none;
-                    font-size: $xxl;
-                }
-            }
+      align-self: flex-end;
+      li {
+        @include primary-nav-type;
+        display: inline-block;
+        margin: 0;
+        color: $gray-9;
+        & + li {
+          margin-left: $large;
         }
+      }
     }
+  }
 }

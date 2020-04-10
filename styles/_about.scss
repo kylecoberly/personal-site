@@ -1,11 +1,22 @@
 #about {
-    .content-wrapper {
-        @include content-area;
-        @media (max-width: $medium-breakpoint) {
-            li {
-                margin-left: $xxs;
-            }
-        }
+  background-color: transparentize($white, 0.5);
+  display: flex;
+  justify-content: center;
+  .description-and-portrait {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: $xxxl;
+    .portrait {
+      flex: 2;
+      padding-left: $xl;
+      img {
+        margin: 0;
+        box-shadow: 0 1px 1px $gray-5;
+      }
     }
+    .description {
+      flex: 3;
+      font-size: $font-xxl;
+    }
+  }
 }
-

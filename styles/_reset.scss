@@ -55,7 +55,7 @@ a {
     color: inherit;
 }
 
-p + p {
+p + p, ul + p, ol + p, ul + ul, ol + ol {
     margin-top: $xl;
 }
 

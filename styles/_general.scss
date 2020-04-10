@@ -1,20 +1,3 @@
-@mixin content-area {
-    max-width: 40rem;
-    margin-bottom: $baseline;
-    margin-top: $xxl;
-    background-color: $white;
-    padding: $xxl;
-    border-radius: 4px;
-    box-shadow: 0 0 4px $light-gray;
-    flex: 1;
-    @media (max-width: $medium-breakpoint) {
-        & {
-            padding: $baseline;
-            margin: 0 $xxs $baseline $xxs;
-        }
-    }
-}
-
 @mixin striped-background {
     background: linear-gradient(
         to bottom,
@@ -24,4 +7,39 @@
         lighten($primary-color, 30%),
     );
     background-size: 100% $xl;
+}
+
+body {
+    @include body-type;
+    @include striped-background;
+}
+
+main > section {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: $xxxxxl 0;
+}
+
+h1 {
+  @include primary-header-type;
+  a {
+    text-decoration: none;
+  }
+}
+#tagline {
+  @include sub-header-type;
+}
+
+h2 {
+    @include secondary-header-type;
+    text-shadow: 0 1px 1px $gray-5;
+}
+
+h3 {
+    @include tertiary-header-type;
+}
+
+.content-wrapper {
+  width: 1000px;
 }

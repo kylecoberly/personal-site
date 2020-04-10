@@ -1,0 +1,50 @@
+#contact {
+  background-color: transparentize($white, 0.5);
+  form {
+    width: 600px;
+    input, textarea, label {
+      display: block;
+      width: 100%;
+    }
+    input, textarea {
+      padding: $large $baseline;
+      font-size: $font-large;
+      @include body-type;
+      border-radius: 0;
+      border: none;
+      box-shadow: 0 1px 1px $gray-5;
+      margin-bottom: $baseline + 2px;
+      &:focus {
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+    input {
+      &:focus {
+        margin-bottom: $baseline; // Only need this on input, not textarea
+      }
+    }
+    label {
+      display: none;
+    }
+    textarea {
+      resize: none;
+      height: $xxxxxxxl;
+    }
+    [type=submit] {
+      background-color: $primary-color;
+      color: $white;
+      @include primary-nav-type;
+      border: none;
+      box-shadow: 0 2px 4px $gray-5;
+      cursor: pointer;
+      padding: $baseline $small;
+      transition: background-color 0.2s;
+      &:active {
+        box-shadow: 0 -2px 2px $gray-7;
+      }
+      &:hover {
+        background-color: lighten($primary-color, 5%);
+      }
+    }
+  }
+}

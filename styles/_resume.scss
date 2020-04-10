@@ -1,0 +1,125 @@
+@mixin burst-animation($name, $rotation, $top, $right){
+  @keyframes #{$name} {
+    from {
+      top: 100%;
+      right: 50%;
+      transform: rotateZ(0deg);
+      opacity: 0;
+    }
+    to {
+      top: $top;
+      right: $right;
+      transform: rotateZ($rotation);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin caret($left, $bottom, $rotation, $color) {
+  &::before {
+    border: 24px solid transparent;
+    border-bottom: 0;
+    height: 0;
+    width: 0;
+    content: " ";
+    display: block;
+    position: absolute;
+    transform-origin: center;
+
+    border-top: 24px solid $color;
+    border-top-width: 24px;
+    left: $left;
+    bottom: $bottom;
+    transform: rotate($rotation) skew(-24deg) translateY(18px);
+  }
+}
+
+$animation-length: 3s;
+$animation-timing: cubic-bezier(0,1,.1,.96);
+@mixin in-view-animation($name, $rotation, $top, $right) {
+  position: absolute;
+  @include animation-origin;
+  &.in-view {
+    @include burst-animation($name, $rotation, $top, $right);
+    animation: $animation-length $animation-timing forwards $name;
+  }
+}
+
+@mixin animation-origin {
+  top: 100%;
+  right: 50%;
+  transform: rotateZ(0deg);
+  opacity: 0;
+}
+
+#resume {
+  background-color: transparentize($right-color-9, 0.5);
+  padding-top: 0;
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    .comic-wrapper {
+      position: relative;
+      height: 800px; // Fixed container height
+      width: 100%;
+      top: -182px; // Snug up to about page
+      .comic-book-bubble {
+        padding: $large;
+        background-color: $white;
+        filter: drop-shadow(0 2px 2px $gray-5);
+        @include comic-book-type;
+      }
+      img {
+        left: -100px; // Overflow container
+        @include in-view-animation(image-burst, 0, 0, auto);
+      }
+      .comic-book-cta {
+        background-color: $gray-9;
+        font-size: $font-large;
+        padding: $large;
+        width: 170px;
+        @include caret(105px, -12px, 90deg, $gray-9);
+        @include in-view-animation(cta-burst, -8deg, 306px, 729px);
+      }
+      .resume {
+        @include caret(30px, -23px, 127deg, $white);
+        @include in-view-animation(resume-burst, 19deg, 390px, 300px);
+      }
+      .work-sample {
+        @include caret(-28px, 41px, -36deg, $white);
+        @include in-view-animation(work-sample-burst, -3deg, 520px, 50px);
+      }
+      .notes {
+        @include caret(-46px, 30px, 218deg, $white);
+        @include in-view-animation(notes-burst, 14deg, 650px, 240px);
+      }
+    }
+  }
+}
+
+.resume-background-wrapper {
+  position: relative;
+  #resume-background-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(
+          to bottom,
+          transparentize($right-color-9, 0.8),
+          transparentize($right-color-9, 0.8) 50%,
+          transparentize($right-color-9, 0.9) 50%,
+          transparentize($right-color-9, 0.9),
+      );
+      background-size: 100% $large;
+      animation: 1.5s infinite scanlines;
+  }
+  @keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+  }
+}

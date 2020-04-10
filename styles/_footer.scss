@@ -1,15 +1,25 @@
-#social {
-    width: 100%;
-    padding: $baseline;
+footer {
+  font-size: $baseline;
+  background-color: $gray-3;
+  display: flex;
+  justify-content: center;
+  padding-top: $xxl;
+  padding-bottom: $xxxl;
+  color: $white;
+  .content-wrapper {
     text-align: right;
-    li {
+    #social {
+      border-bottom: 1px solid $gray-7;
+      padding-bottom: $baseline;
+      li {
         display: inline-block;
-        padding: $xxs;
-        margin: 0;
-        a {
-            font-size: $xl;
-            color: $medium-gray;
-        }
+        font-size: $xl;
+        margin-left: $baseline;
+      }
     }
+    small {
+      display: inline-block;
+      padding-top: $baseline;
+    }
+  }
 }
-

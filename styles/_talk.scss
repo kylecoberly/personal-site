@@ -1,35 +1,4 @@
 #talk {
-    h2 {
-        margin-bottom: 0;
-    }
-    h3 {
-        @include tertiary-header-type;
-    }
-    .byline {
-        font-size: $large;
-    }
-    .content-wrapper {
-        @include content-area;
-        flex: 1;
-    }
-    .images li {
-        display: block;
-        margin-left: 0;
-        width: 100%;
-    }
-    .links {
-        margin-bottom: $xxl;
-        li {
-            margin-bottom: $baseline;
-        }
-    }
-    .abstract {
-        margin-top: $baseline;
-        margin-bottom: $baseline;
-        p, li {
-            max-width: $max-line-length;
-        }
-    }
     .video-container {
         position: relative;
         height: 0;
