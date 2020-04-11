@@ -1,34 +1,24 @@
 #writing {
-  margin-top: -130px;
-  background-color: transparentize(lighten($primary-color-9, 10%), 0.6);
+  margin-top: -230px;
+  background-color: transparentize($left-color-9, 0.5);
+  clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 85%);
+  padding: $xxxxxxxl 0; // Override to accomodate path clipping
   @media (max-width: $small-breakpoint) {
     & {
       margin-top: 0;
       padding-bottom: $xxl;
     }
   }
-  h2 {
-    margin-bottom: $xxxl;
-    @media (max-width: $medium-breakpoint) {
-      & {
-        margin-bottom: $xl;
-      }
-    }
-    @media (max-width: $small-breakpoint) {
-      & {
-        margin-bottom: $large;
-      }
-    }
-  }
   .read-more {
     display: flex;
     justify-content: center;
     a {
-      box-shadow: 2px 0 4px $gray-5;
-      background-color: $primary-color-5;
+      box-shadow: 0 2px 4px $gray-5;
+      background-color: $left-color-3;
       color: $white;
       text-decoration: none;
       padding: $baseline $large;
+      display: inline-block;
       @include primary-nav-type;
     }
   }
@@ -79,6 +69,7 @@
           background-image: repeating-linear-gradient(white 0px, white $large, transparentize(teal, 0.7) 25px);
           box-shadow: 0 1px 1px $gray-5;
           line-height: 1.4;
+          font-size: $font-large;
           @media (max-width: $medium-breakpoint) {
             & {
               padding: $xl $xxl;
@@ -113,6 +104,7 @@
       .abstract {
         order: 1;
         padding-right: $large;
+        margin-left: -$xxxl;
         @media (max-width: $small-breakpoint) {
           & {
             padding: 0;
@@ -133,6 +125,7 @@
       .abstract {
         order: 2;
         padding-left: $large;
+        margin-right: -$xxxl;
         @media (max-width: $small-breakpoint) {
           & {
             padding: 0;

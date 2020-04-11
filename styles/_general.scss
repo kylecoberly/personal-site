@@ -55,9 +55,6 @@ main > section {
 
 h1 {
   @include primary-header-type;
-  a {
-    text-decoration: none;
-  }
 }
 #tagline {
   @include sub-header-type;
@@ -65,7 +62,6 @@ h1 {
 
 h2 {
     @include secondary-header-type;
-    text-shadow: 0 1px 1px $gray-5;
 }
 
 h3 {
@@ -73,7 +69,7 @@ h3 {
 }
 
 .content-wrapper {
-  width: 900px;
+  width: 1000px;
   @media (max-width: $medium-breakpoint) {
     & {
       width: 650px;

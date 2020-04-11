@@ -4,7 +4,7 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  font-size: $font-large;
+  font-size: $font-xxl;
   color: $gray-1;
   @media (max-width: $medium-breakpoint) {
     & {
@@ -22,10 +22,13 @@
 
 @mixin primary-header-type {
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: $font-xxxxxxxxxl;
+  font-size: $font-xxxxxxxxxxl;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
   color: $gray-1;
+  a {
+    text-decoration: none;
+  }
   @media (max-width: $medium-breakpoint) {
     & {
       font-size: $font-xxxxxxxl;
@@ -44,7 +47,7 @@
   margin-top: -20px; /* Visual alignment */
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
-  font-size: $font-xxxl;
+  font-size: $font-xxxxl;
   color: $white;
   @media (max-width: $medium-breakpoint) {
     & {
@@ -67,12 +70,20 @@
 @mixin secondary-header-type {
   font-family: "Open Sans Condensed", sans-serif;
   text-transform: uppercase;
-  font-size: $font-xxxxxl;
+  font-size: $font-xxxxxxxl;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.1;
   color: $gray-1;
   margin-top: $large;
   margin-bottom: $baseline;
+  text-shadow: 0 1px 1px $gray-5;
+  @media (max-width: $medium-breakpoint) {
+    & {
+      line-height: 1; 
+      font-size: $font-xxxxxl;
+      margin-bottom: $baseline;
+    }
+  }
   @media (max-width: $small-breakpoint) {
     & {
       line-height: 1; 
@@ -85,9 +96,9 @@
 @mixin tertiary-header-type {
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 700;
-  margin-bottom: $small;
   font-size: $font-xxxl;
-  margin-bottom: $xxl;
+  margin-top: $large;
+  margin-bottom: $xl;
   @media (max-width: $medium-breakpoint) {
     & {
       font-size: $font-xl;
@@ -105,7 +116,7 @@
 @mixin primary-nav-type {
   font-family: "Open Sans Condensed", sans-serif;
   text-transform: uppercase;
-  font-size: $font-xxl;
+  font-size: $font-xxxl;
   color: $white;
   @media (max-width: $small-breakpoint) {
     & {

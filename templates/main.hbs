@@ -27,13 +27,13 @@
         {{#block "background"}}{{/block}}
         <div id="{{page}}">
             <header>
-              {{#if isSpeaking}}
-                <div id="speaking-background-cover">&nbsp;</div>
-              {{/if}}
+              {{#unless isHome}}
+                <div id="header-background-cover">&nbsp;</div>
+              {{/unless}}
               <div class="content-wrapper">
                 <h1><a href="/">Kyle Coberly</a></h1>
                 <p id="tagline">Educator, business dork, agile product engineer</p>
-                {{#unless isSpeaking}}
+                {{#if isHome}}
                   <nav>
                       <ul>
                           <li {{#if isSpeaking}} class="active" {{/if}}
@@ -43,7 +43,7 @@
                           <li><a href="#" class="contact-link">Contact</a></li>
                       <ul>
                   </nav>
-                {{/unless}}
+                {{/if}}
               </div>
             </header>
             <main>

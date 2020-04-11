@@ -1,5 +1,5 @@
 #contact {
-  background-color: transparentize($white, 0.5);
+  padding-top: 0;
   form {
     width: 600px;
     @media (max-width: $small-breakpoint) {
