@@ -31,49 +31,89 @@
     left: $left;
     bottom: $bottom;
     transform: rotate($rotation) skew(-24deg) translateY(18px);
+    @media (max-width: $small-breakpoint) {
+      & {
+        border: 16px solid transparent;
+        border-top: 16px solid $color;
+        border-top-width: 16px;
+        left: 0;
+        bottom: -10px;
+        transform: rotate(-90deg) skew(-4deg) translateY(13px);
+      }
+    }
   }
 }
 
-$animation-length: 3s;
-$animation-timing: cubic-bezier(0,1,.1,.96);
 @mixin in-view-animation($name, $rotation, $top, $right) {
   position: absolute;
-  @include animation-origin;
-  &.in-view {
-    @include burst-animation($name, $rotation, $top, $right);
-    animation: $animation-length $animation-timing forwards $name;
-  }
-}
-
-@mixin animation-origin {
   top: 100%;
   right: 50%;
   transform: rotateZ(0deg);
   opacity: 0;
+  &.in-view {
+    @include burst-animation($name, $rotation, $top, $right);
+    animation: 3s cubic-bezier(0,1,.1,.96) forwards $name;
+  }
 }
 
 #resume {
   background-color: transparentize($right-color-9, 0.5);
   padding-top: 0;
+  position: relative;
+  @media (max-width: $small-breakpoint) {
+    & {
+      padding-top: $xl;
+      padding-bottom: 0;
+    }
+  }
   .content-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
+    @media (max-width: $small-breakpoint) {
+      & {
+        padding: 0;
+      }
+    }
     .comic-wrapper {
       position: relative;
       height: 800px; // Fixed container height
       width: 100%;
       top: -182px; // Snug up to about page
+      @media (max-width: $medium-breakpoint) {
+        & {
+          height: 490px;
+          top: -95px;
+        }
+      }
+      @media (max-width: $small-breakpoint) {
+        & {
+          height: 350px;
+          top: 0;
+          overflow-y: hidden;
+        }
+      }
       .comic-book-bubble {
         padding: $large;
         background-color: $white;
         filter: drop-shadow(0 2px 2px $gray-5);
         @include comic-book-type;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: $baseline;
+            @include in-view-animation(cta-burst, 0deg, 0, 0);
+          }
+        }
       }
       img {
         left: -100px; // Overflow container
         @include in-view-animation(image-burst, 0, 0, auto);
+        @media (max-width: $small-breakpoint) {
+          & {
+            @include in-view-animation(image-burst, 0, -100px, 100%);
+          }
+        }
       }
       .comic-book-cta {
         background-color: $gray-9;
@@ -81,45 +121,73 @@ $animation-timing: cubic-bezier(0,1,.1,.96);
         padding: $large;
         width: 170px;
         @include caret(105px, -12px, 90deg, $gray-9);
-        @include in-view-animation(cta-burst, -8deg, 306px, 729px);
+        @include in-view-animation(cta-burst, -8deg, 306px, 650px);
+        @media (max-width: $medium-breakpoint) {
+          & {
+            @include in-view-animation(cta-burst, -8deg, 150px, 450px);
+          }
+        }
+        @media (max-width: $small-breakpoint) {
+          & {
+            width: auto;
+            padding: $baseline;
+            font-size: $font-small;
+            @include in-view-animation(cta-burst, 0deg, 0, calc(100% - 200px));
+          }
+        }
       }
       .resume {
         @include caret(30px, -23px, 127deg, $white);
-        @include in-view-animation(resume-burst, 19deg, 390px, 300px);
+        @include in-view-animation(resume-burst, 19deg, 360px, 300px);
+        @media (max-width: $medium-breakpoint) {
+          & {
+            @include in-view-animation(resume-burst, 19deg, 120px, 175px);
+          }
+        }
+        @media (max-width: $small-breakpoint) {
+          & {
+            @include in-view-animation(resume-burst, 0deg, 0, $small);
+          }
+        }
       }
       .work-sample {
         @include caret(-28px, 41px, -36deg, $white);
-        @include in-view-animation(work-sample-burst, -3deg, 520px, 50px);
+        @include in-view-animation(work-sample-burst, -3deg, 480px, 20px);
+        @media (max-width: $medium-breakpoint) {
+          & {
+            @include in-view-animation(work-sample-burst, -3deg, 250px, -70px);
+          }
+        }
+        @media (max-width: $small-breakpoint) {
+          & {
+            @include in-view-animation(work-sample-burst, 0deg, 150px, $small); // Order is flipped on mobile
+          }
+        }
       }
       .notes {
         @include caret(-46px, 30px, 218deg, $white);
-        @include in-view-animation(notes-burst, 14deg, 650px, 240px);
+        @include in-view-animation(notes-burst, 14deg, 600px, 220px);
+        @media (max-width: $medium-breakpoint) {
+          & {
+            @include in-view-animation(notes-burst, 14deg, 400px, 170px);
+          }
+        }
+        @media (max-width: $small-breakpoint) {
+          & {
+            @include in-view-animation(notes-burst, 0deg, 75px, $small); // Order is flipped on mobile
+          }
+        }
       }
     }
   }
 }
 
-.resume-background-wrapper {
-  position: relative;
-  #resume-background-cover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: linear-gradient(
-          to bottom,
-          transparentize($right-color-9, 0.8),
-          transparentize($right-color-9, 0.8) 50%,
-          transparentize($right-color-9, 0.9) 50%,
-          transparentize($right-color-9, 0.9),
-      );
-      background-size: 100% $large;
-      animation: 1.5s infinite scanlines;
-  }
-  @keyframes scanlines {
-    from { background-position: 0 0; }
-    to { background-position: 0 100%; }
-  }
+#resume-background-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    @include buzzy-background;
 }

@@ -1,8 +1,24 @@
 #writing {
   margin-top: -130px;
-  background-color: transparentize(lighten($primary-color-9, 10%), 0.5);
+  background-color: transparentize(lighten($primary-color-9, 10%), 0.6);
+  @media (max-width: $small-breakpoint) {
+    & {
+      margin-top: 0;
+      padding-bottom: $xxl;
+    }
+  }
   h2 {
     margin-bottom: $xxxl;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        margin-bottom: $xl;
+      }
+    }
+    @media (max-width: $small-breakpoint) {
+      & {
+        margin-bottom: $large;
+      }
+    }
   }
   .read-more {
     display: flex;
@@ -20,23 +36,40 @@
     list-style: none;
     margin-left: 0;
     margin-bottom: $xxxxl;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        margin-bottom: $xxl;
+      }
+    }
+    @media (max-width: $small-breakpoint) {
+      & {
+        margin-bottom: $xl;
+      }
+    }
     &:nth-child(1){
       .abstract {
         transform: rotateZ(1deg);
+        @media (max-width: $small-breakpoint) {
+          & {
+            transform: rotateZ(0);
+          }
+        }
       }
     }
     &:nth-child(2){
       .abstract {
         transform: rotateZ(-1deg);
+        @media (max-width: $small-breakpoint) {
+          & {
+            transform: rotateZ(0);
+          }
+        }
       }
     }
     article {
-      h3 {
-        font-size: $font-xxxl;
-        margin-bottom: $xxl;
-      }
       .abstract-and-media {
         display: flex;
+        flex-flow: row wrap;
         justify-content: space-between;
         align-items: flex-start;
         .abstract {
@@ -46,11 +79,32 @@
           background-image: repeating-linear-gradient(white 0px, white $large, transparentize(teal, 0.7) 25px);
           box-shadow: 0 1px 1px $gray-5;
           line-height: 1.4;
+          @media (max-width: $medium-breakpoint) {
+            & {
+              padding: $xl $xxl;
+            }
+          }
+          @media (max-width: $small-breakpoint) {
+            & {
+              order: 2;
+              flex: auto;
+              padding: 0;
+              background: none;
+              box-shadow: none;
+            }
+          }
         }
         .media {
           flex: 1;
           img {
             margin: 0;
+          }
+          @media (max-width: $small-breakpoint) {
+            & {
+              flex: auto;
+              order: 1;
+              margin-bottom: $large;
+            }
           }
         }
       }
@@ -59,20 +113,40 @@
       .abstract {
         order: 1;
         padding-right: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
       }
       .media {
         order: 2;
         padding-left: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
       }
     }
     &:nth-of-type(odd){
       .abstract {
         order: 2;
         padding-left: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
       }
       .media {
         order: 1;
         padding-right: $large;
+        @media (max-width: $small-breakpoint) {
+          & {
+            padding: 0;
+          }
+        }
       }
     }
   }

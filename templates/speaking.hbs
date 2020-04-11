@@ -1,10 +1,11 @@
 {{#extend "main"}}
     {{#content "main"}}
         <div class="content-wrapper">
+            <h2>Writing</h2>
             <ul id="talks">
                 {{#each talks}}
                     <li class="talk">
-                        <img class="icon" src="{{iconUrl}}" />
+                        <object type="image/svg+xml" data="{{iconUrl}}" class="icon"></object>
                         <div class="details">
                             <h3><a href="/talks/{{slug}}">{{title}}</a></h3>
                             <div class="byline">

@@ -79,6 +79,11 @@ li {
     display: list-item;
     margin-bottom: $xxs;
     margin-left: $xxl;
+    @media (max-width: $small-breakpoint) {
+      & {
+        margin-left: $large;
+      }
+    }
 }
 
 address, time {

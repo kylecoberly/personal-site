@@ -1,4 +1,36 @@
-@mixin striped-background {
+@mixin bad-scanlines {
+    background: linear-gradient(
+        to bottom,
+        transparentize($primary-color, 0.4),
+        transparentize($primary-color, 0.4) 50%,
+        transparentize($primary-color, 0.5) 50%,
+        transparentize($primary-color, 0.5),
+    );
+    background-size: 100% $large;
+    animation: 1.5s infinite alternate scanlines;
+    @keyframes scanlines {
+      from { background-position: 0 0; }
+      to { background-position: 0 100%; }
+    }
+}
+@mixin buzzy-background {
+    background: linear-gradient(
+        to bottom,
+        transparentize($right-color-9, 0.8),
+        transparentize($right-color-9, 0.8) 50%,
+        transparentize($right-color-9, 0.9) 50%,
+        transparentize($right-color-9, 0.9),
+    );
+    background-size: 100% $large;
+    animation: 1.5s infinite buzzy-scanlines;
+    @keyframes buzzy-scanlines {
+      from { background-position: 0 0; }
+      to { background-position: 0 100%; }
+    }
+}
+
+body {
+    @include body-type;
     background: linear-gradient(
         to bottom,
         lighten($primary-color, 30%),
@@ -9,16 +41,16 @@
     background-size: 100% $xl;
 }
 
-body {
-    @include body-type;
-    @include striped-background;
-}
-
 main > section {
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
   padding: $xxxxxl 0;
+  @media (max-width: $small-breakpoint) {
+    & {
+      padding: $xl 0;
+    }
+  }
 }
 
 h1 {
@@ -41,5 +73,16 @@ h3 {
 }
 
 .content-wrapper {
-  width: 1000px;
+  width: 900px;
+  @media (max-width: $medium-breakpoint) {
+    & {
+      width: 650px;
+    }
+  }
+  @media (max-width: $small-breakpoint) {
+    & {
+      width: 100%;
+      padding: $small;
+    }
+  }
 }

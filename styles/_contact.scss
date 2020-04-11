@@ -2,6 +2,12 @@
   background-color: transparentize($white, 0.5);
   form {
     width: 600px;
+    @media (max-width: $small-breakpoint) {
+      & {
+        width: 100%;
+        padding: $small;
+      }
+    }
     input, textarea, label {
       display: block;
       width: 100%;

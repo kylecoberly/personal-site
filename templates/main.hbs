@@ -27,18 +27,23 @@
         {{#block "background"}}{{/block}}
         <div id="{{page}}">
             <header>
+              {{#if isSpeaking}}
+                <div id="speaking-background-cover">&nbsp;</div>
+              {{/if}}
               <div class="content-wrapper">
                 <h1><a href="/">Kyle Coberly</a></h1>
                 <p id="tagline">Educator, business dork, agile product engineer</p>
-                <nav>
-                    <ul>
-                        <li {{#if isSpeaking}} class="active" {{/if}}
-                        ><a href="#" class="about-link">About</a></li>
-                        <li {{#if isAbout}} class="active" {{/if}}
-                        ><a href="/about.html" class="writing-link">Writing</a></li>
-                        <li><a href="#" class="contact-link">Contact</a></li>
-                    <ul>
-                </nav>
+                {{#unless isSpeaking}}
+                  <nav>
+                      <ul>
+                          <li {{#if isSpeaking}} class="active" {{/if}}
+                          ><a href="#" class="about-link">About</a></li>
+                          <li {{#if isAbout}} class="active" {{/if}}
+                          ><a href="/speaking.html" class="writing-link">Writing</a></li>
+                          <li><a href="#" class="contact-link">Contact</a></li>
+                      <ul>
+                  </nav>
+                {{/unless}}
               </div>
             </header>
             <main>
@@ -63,7 +68,6 @@
       <script>
         addScrollBehavior(".about-link", "#about")
         addScrollBehavior(".contact-link", "#contact")
-        addScrollBehavior(".writing-link", "#writing")
 
         function addScrollBehavior(linkSelector, targetSelector){
           const $link = document.querySelector(linkSelector);

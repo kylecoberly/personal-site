@@ -1,2 +1,51 @@
 #speaking {
+  > header {
+    height: auto;
+    padding: $xxxxxl;
+    position: relative;
+  }
+  > main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: $xxxxl 0;
+    background: $white;
+  }
+  .talk {
+    margin-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: $white;
+    align-items: flex-start;
+    .details {
+      padding: $large $large $xxl $large;
+      flex: 8;
+      h3 {
+        margin-bottom: $xs;
+        color: $gray-1;
+      }
+      .byline {
+        color: $gray-5;
+      }
+    }
+    .icon {
+      width: $xxxxxl;
+      margin: 0;
+      padding: $large 0;
+      flex: 1;
+      #apple-line {
+        stroke: $gray-5;
+      }
+    }
+  }
+}
+
+#speaking-background-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  @include bad-scanlines;
 }
