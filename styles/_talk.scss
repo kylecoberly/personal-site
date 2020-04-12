@@ -1,48 +1,49 @@
 #talk {
-    h2 {
-        margin-bottom: 0;
+  > header {
+    height: auto;
+    padding: $xxxxxl;
+    position: relative;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
     }
-    h3 {
-        @include tertiary-header-type;
+  }
+  > main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: $xxxxl 0;
+    background: $white;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
     }
-    .byline {
-        font-size: $large;
+  }
+  .images li {
+    margin-left: 0;
+    list-style: none;
+    border: 1px solid $gray-9;
+    margin-bottom: $xl;
+  }
+  .byline {
+    margin-bottom: $xxl;
+    color: $gray-5;
+  }
+  .video-container {
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    width: 100%;
+    margin-bottom: $xxl;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
     }
-    .content-wrapper {
-        @include content-area;
-        flex: 1;
-    }
-    .images li {
-        display: block;
-        margin-left: 0;
-        width: 100%;
-    }
-    .links {
-        margin-bottom: $xxl;
-        li {
-            margin-bottom: $baseline;
-        }
-    }
-    .abstract {
-        margin-top: $baseline;
-        margin-bottom: $baseline;
-        p, li {
-            max-width: $max-line-length;
-        }
-    }
-    .video-container {
-        position: relative;
-        height: 0;
-        padding-top: 56.25%;
-        width: 100%;
-        margin-bottom: $xxl;
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            border: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
+  }
 }

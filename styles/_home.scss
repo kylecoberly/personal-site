@@ -1,43 +1,7 @@
-@import "colors";
-
-#background {
-    background-color: $black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+#home { // Getting landing page to underlap the scanlines background
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
 }
-
-#background-cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background: linear-gradient(
-        to bottom,
-        transparentize($primary-color, 0.4),
-        transparentize($primary-color, 0.4) 50%,
-        transparentize($primary-color, 0.5) 50%,
-        transparentize($primary-color, 0.5),
-    );
-    background-size: 100% $large;
-}
-
-#home {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 20;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    header {
-        color: $white;
-    }
-}
-

@@ -1,0 +1,41 @@
+#contact {
+  padding-top: $xxxxl;
+  background: linear-gradient(
+    to bottom,
+    transparentize($primary-color-9, 0.5),
+    transparentize($primary-color-9, 0.6) 50%,
+    transparentize($primary-color-9, 0.6) 50%,
+    transparentize($primary-color-9, 0.5),
+  );
+  @media (max-width: $small-breakpoint) {
+    & {
+      padding-top: $xl;
+    }
+  }
+  background-size: 100% $large;
+  form {
+    width: 600px;
+    @media (max-width: $small-breakpoint) {
+      & {
+        width: 100%;
+        padding: $small;
+      }
+    }
+    [type=submit] {
+      @include primary-nav-type;
+      color: $white;
+      background-color: $primary-color-5;
+      padding: $baseline $small;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      box-shadow: 0 2px 4px $gray-5;
+      &:active {
+        box-shadow: 0 -2px 4px $gray-7;
+      }
+      &:hover {
+        background-color: lighten($primary-color-5, 5%);
+      }
+    }
+  }
+}

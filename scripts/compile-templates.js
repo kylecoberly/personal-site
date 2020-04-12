@@ -1,50 +1,104 @@
-const fs = require("fs").promises;
-const handlebars = require("handlebars");
-const layouts = require("handlebars-layouts");
-const { talks } = require("../data/talks");
-const processTalks = require("./process-talks");
-
-initialize();
+const fs = require("fs").promises
+const handlebars = require("handlebars")
+const layouts = require("handlebars-layouts")
+const { talks } = require("../data/talks")
+const processTalks = require("./process-talks")
 
 async function initialize() {
-    handlebars.registerHelper(layouts(handlebars));
+    handlebars.registerHelper(layouts(handlebars))
 
-    const layout = await fs.readFile("templates/main.hbs", "utf-8");
-    handlebars.registerPartial("main", layout);
+    const layout = await readFile("templates/main.hbs")
+    handlebars.registerPartial("main", layout)
 
-    await writeTemplate("404");
-    await writeTemplate("about", { page: "about", isAbout: true });
-    await writeTemplate("index", { page: "home" });
-    await writeTemplate("speaking", { page: "speaking", talks: processTalks(talks), isSpeaking: true });
-    await createTalks();
+    Promise.all([
+      writeTemplate("404"),
+      writeTemplate("index", { page: "home", isHome: true }),
+      writeTemplate("writing", { page: "writing", talks: processTalks(talks), isWriting: true }),
+      createTalks(talks),
+    ]).catch(logError)
 }
 
-function createTalks() {
-    return fs.readFile("templates/talk.hbs", "utf-8")
-    .then(template => {
-        const compiledTemplate = handlebars.compile(template);
-        return processTalks(talks).map(talk => {
-            return createFile(talk.slug, compiledTemplate({ page: "talk", talk }));
-        });
-    }).then(talkFiles => {
-        return Promise.all(talkFiles)
-    }).then(() => console.log("Success!"))
-    .catch(error => console.error(error));
+function createTalks(talks) {
+  return readFile("templates/talk.hbs")
+    .then(applyTalksToTemplates(talks))
+    .then(Promise.all)
+    .then(logSuccess)
+    .catch(logError)
+}
+
+function applyTalksToTemplates(talks){
+  return template => processTalks(talks).map(createTalkFile(compileTemplate(template)))
 }
 
 function writeTemplate(name, data) {
-    return fs.readFile(`templates/${name}.hbs`, "utf-8").then(template => {
-        return handlebars.compile(template);
-    }).then(template => {
-        return template(data);
-    }).then(html => {
-        return fs.writeFile(`dist/${name}.html`, html, "utf-8");
-    }).catch(error => console.error(error));
+  return readTemplate(name)
+    .then(compileTemplate)
+    .then(template => template(data))
+    .then(html => writePage(name, html))
+    .catch(logError)
 }
 
-function createFile(fileName, html) {
-    return fs.mkdir(`dist/talks/${fileName}`, { recursive: true })
-    .then(() => {
-        return fs.writeFile(`dist/talks/${fileName}/index.html`, html, "utf-8");
-    }).catch(error => console.error(error.message));
+function writeTalk(fileName, html) {
+  return makeTalkFolder(fileName)
+    .then(writeTalkFile(fileName, html))
+    .catch(logError)
+}
+
+function logError(error){
+  return console.error(error.message)
+}
+
+function logSuccess(){
+  return console.log("Success!")
+}
+
+function readFile(fileName){
+  return fs.readFile(fileName, "utf-8")
+}
+
+function readTemplate(templateName){
+  return readFile(`templates/${templateName}.hbs`)
+}
+
+function writeFile(fileName, content){
+  return fs.writeFile(fileName, content, "utf-8")
+}
+
+function writeTalkFile(folderName, html){
+  return () => writeFile(`dist/talks/${folderName}/index.html`, html)
+}
+
+function writePage(fileName, html){
+  return writeFile(`dist/${fileName}.html`, html)
+}
+
+function makeTalkFolder(folderName){
+  return fs.mkdir(`dist/talks/${folderName}`, { recursive: true })
+}
+
+function compileTemplate(template){
+  return handlebars.compile(template)
+}
+
+function createTalkFile(compiledTemplate){
+  return talk => writeTalk(
+    talk.slug,
+    compiledTemplate({ page: "talk", talk }),
+  )
+}
+
+module.exports = {
+  initialize,
+  compileTemplate,
+  makeTalkFolder,
+  createTalkFile,
+  writePage,
+  writeTalkFile,
+  writeFile,
+  readFile,
+  readTemplate,
+  logError,
+  logSuccess,
+  writeTalk,
+  writeTemplate,
 }
