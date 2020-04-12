@@ -1,5 +1,4 @@
 #about {
-  background-color: $white;
   display: flex;
   justify-content: center;
   @media (max-width: $medium-breakpoint) {
@@ -45,9 +44,9 @@
       }
       @media (max-width: $small-breakpoint) {
         & {
-          margin-bottom: $large;
-          font-size: $font-baseline;
           flex: auto;
+          font-size: $font-baseline;
+          margin-bottom: $large;
         }
       }
     }

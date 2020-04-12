@@ -88,3 +88,36 @@ address, time {
     display: inline-block;
     font-style: italic;
 }
+
+input, textarea, label {
+  display: block;
+  width: 100%;
+}
+
+input, textarea {
+  @include body-type;
+  font-size: $font-large;
+  padding: $large $baseline;
+  border-radius: 0;
+  border: none;
+  margin-bottom: $baseline + 2px;
+  box-shadow: 0 1px 1px $gray-5;
+  &:focus {
+    border-bottom: 2px solid $primary-color-5;
+  }
+}
+
+input {
+  &:focus {
+    margin-bottom: $baseline; // Only need this on input, not textarea
+  }
+}
+
+label {
+  display: none;
+}
+
+textarea {
+  height: $xxxxxxxl;
+  resize: none;
+}

@@ -1,31 +1,32 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,700|Open+Sans:400,400i,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,700|Open+Sans:400,400i&display=swap");
 
 @mixin body-type {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  line-height: 1.5;
   font-size: $font-xxl;
   color: $gray-1;
+  line-height: 1.5;
   @media (max-width: $medium-breakpoint) {
     & {
-      line-height: 1.3; 
-      font-size: $baseline;
+      line-height: 1.3;
+      font-size: $font-baseline;
     }
   }
   @media (max-width: $small-breakpoint) {
     & {
-      line-height: 1.2; 
-      font-size: $baseline;
+      line-height: 1.2;
+      font-size: $font-baseline;
     }
   }
 }
 
 @mixin primary-header-type {
   font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 400;
   font-size: $font-xxxxxxxxxxl;
+  color: $white;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
-  color: $gray-1;
   a {
     text-decoration: none;
   }
@@ -43,51 +44,49 @@
 
 @mixin sub-header-type {
   font-family: "Open Sans Condensed", sans-serif;
-  margin-left: 3px; /* Visual alignment */
-  margin-top: -20px; /* Visual alignment */
-  font-family: 'Open Sans Condensed', sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
   font-size: $font-xxxxl;
   color: $white;
+  text-transform: uppercase;
+  margin-left: 3px; /* Visual alignment */
+  margin-top: -20px; /* Visual alignment */
   @media (max-width: $medium-breakpoint) {
     & {
+      font-size: $font-xl;
       margin-left: 2px; /* Visual alignment */
       margin-top: 0; /* Visual alignment */
       margin-bottom: $xl;
-      font-size: $font-xl;
     }
   }
   @media (max-width: $small-breakpoint) {
     & {
-      margin-left: 2px; /* Visual alignment */
-      margin-top: 0; /* Visual alignment */
-      margin-bottom: $large;
       font-size: $font-baseline;
+      margin-bottom: $large;
     }
   }
 }
 
 @mixin secondary-header-type {
   font-family: "Open Sans Condensed", sans-serif;
-  text-transform: uppercase;
   font-size: $font-xxxxxxxl;
   font-weight: 400;
-  line-height: 1.1;
   color: $gray-1;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px $gray-5;
   margin-top: $large;
   margin-bottom: $baseline;
-  text-shadow: 0 1px 1px $gray-5;
   @media (max-width: $medium-breakpoint) {
     & {
-      line-height: 1; 
       font-size: $font-xxxxxl;
+      line-height: 1;
       margin-bottom: $baseline;
     }
   }
   @media (max-width: $small-breakpoint) {
     & {
-      line-height: 1; 
       font-size: $font-xxxl;
+      line-height: 1;
       margin-bottom: $baseline;
     }
   }
@@ -115,9 +114,10 @@
 
 @mixin primary-nav-type {
   font-family: "Open Sans Condensed", sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
   font-size: $font-xxxl;
   color: $white;
+  text-transform: uppercase;
   @media (max-width: $small-breakpoint) {
     & {
       font-size: $font-large;
@@ -127,11 +127,11 @@
 
 @mixin comic-book-type {
   font-family: "Open Sans Condensed", sans-serif;
-  text-transform: uppercase;
   font-size: $font-xxxl;
   font-weight: 400;
-  line-height: 1.5;
   color: $gray-3;
+  line-height: 1.5;
+  text-transform: uppercase;
   @media (max-width: $small-breakpoint) {
     & {
       font-size: $font-large;

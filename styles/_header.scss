@@ -2,16 +2,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparentize($primary-color, 0.3);
   height: 100vh;
   .content-wrapper {
     display: flex;
     flex-flow: column nowrap;
     h1, #tagline {
       align-self: flex-start;
-    }
-    h1 {
-      color: $white;
     }
     nav {
       align-self: flex-end;
@@ -35,4 +31,28 @@ header {
     z-index: -1;
     @include bad-scanlines;
   }
+}
+
+#background {
+  background-color: $black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#background-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  @include bad-scanlines;
+}
+
+.background-wrapper {
+  position: relative;
+  height: 100vh;
 }

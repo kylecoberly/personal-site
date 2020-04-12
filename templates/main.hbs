@@ -1,113 +1,85 @@
 <!doctype html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/app.css">
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/app.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/assets/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-        <link rel="manifest" href="/assets/manifest.json">
-        <meta name="msapplication-TileColor" content="#23236f">
-        <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
-        <meta name="theme-color" content="#23236f">
-    </head>
-    <body>
-        {{#block "background"}}{{/block}}
-        <div id="{{page}}">
-            <header>
-              {{#unless isHome}}
-                <div id="header-background-cover">&nbsp;</div>
-              {{/unless}}
-              <div class="content-wrapper">
-                <h1><a href="/">Kyle Coberly</a></h1>
-                <p id="tagline">Educator, business dork, agile product engineer</p>
-                {{#if isHome}}
-                  <nav>
-                      <ul>
-                          <li {{#if isSpeaking}} class="active" {{/if}}
-                          ><a href="#" class="about-link">About</a></li>
-                          <li {{#if isAbout}} class="active" {{/if}}
-                          ><a href="/speaking.html" class="writing-link">Writing</a></li>
-                          <li><a href="#" class="contact-link">Contact</a></li>
-                      <ul>
-                  </nav>
-                {{/if}}
-              </div>
-            </header>
-            <main>
-                {{#block "main"}}{{/block}}
-                {{#block "about"}}{{/block}}
-                {{#block "resume"}}{{/block}}
-                {{#block "manifestos"}}{{/block}}
-                {{#block "writing"}}{{/block}}
-                {{#block "contact"}}{{/block}}
-            </main>
-            <footer>
-                <div class="content-wrapper">
-                  <ul id="social">
-                      <li><a href="https://www.linkedin.com/in/kylecoberly" target="_BLANK"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="https://github.com/kylecoberly" target="_BLANK"><i class="fa fa-github"></i></a></li>
-                      <li><a href="https://twitter.com/kylecoberly?lang=en" target="_BLANK"><i class="fa fa-twitter"></a></i></li>
-                  </ul>
-                  <small>&copy; Now, by Me. A couple of rights reserved.</small>
-                </div>
-            </footer>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#23236f">
+    <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#23236f">
+  </head>
+  <body>
+    {{#block "background"}}{{/block}}
+    <div id="{{page}}">
+      <header>
+        {{#unless isHome}}
+          <div id="header-background-cover">&nbsp;</div>
+        {{/unless}}
+        <div class="content-wrapper">
+          <h1><a href="/">Kyle Coberly</a></h1>
+          <p id="tagline">Educator, business dork, agile product engineer</p>
+          {{#if isHome}}
+            <nav>
+              <ul>
+                <li><a href="#" class="about-link">About</a></li>
+                <li><a href="/writing.html" class="writing-link">Writing</a></li>
+                <li><a href="#" class="contact-link">Contact</a></li>
+                <ul>
+            </nav>
+          {{/if}}
         </div>
-      <script>
-        addScrollBehavior(".about-link", "#about")
-        addScrollBehavior(".contact-link", "#contact")
+      </header>
+      <main>
+        {{#block "main"}}{{/block}}
+        {{#block "about"}}{{/block}}
+        {{#block "resume"}}{{/block}}
+        {{#block "writing"}}{{/block}}
+        {{#block "contact"}}{{/block}}
+      </main>
+      <footer>
+        <div class="content-wrapper">
+          <ul id="social">
+            <li><a href="https://www.linkedin.com/in/kylecoberly" target="_BLANK"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/kylecoberly" target="_BLANK"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://twitter.com/kylecoberly?lang=en" target="_BLANK"><i class="fa fa-twitter"></a></i></li>
+          </ul>
+          <small>&copy; Now, by Me. A couple of rights reserved.</small>
+        </div>
+      </footer>
+    </div>
+    <script>
+      addScrollBehavior(".about-link", "#about");
+      addScrollBehavior(".contact-link", "#contact");
 
-        function addScrollBehavior(linkSelector, targetSelector){
-          const $link = document.querySelector(linkSelector);
-          const $target = document.querySelector(targetSelector);
+      function addScrollBehavior(linkSelector, targetSelector){
+        const $link = document.querySelector(linkSelector);
+        const $target = document.querySelector(targetSelector);
 
-          $link.addEventListener("click", event => {
-            event.preventDefault()
-            history.pushState({}, "", targetSelector)
-            try {
-              $target.scrollIntoView({ behavior: "smooth" })
-            } catch (_){
-              $target.scrollIntoView(true)
-            }
-          })
-        }
-      </script>
-      <script>
-        addManifestoListener(".education-link", "#education")
-        addManifestoListener(".business-link", "#business")
-        addManifestoListener(".software-link", "#software")
-
-        function addManifestoListener(linkSelector, sectionSelector){
-          const $link = document.querySelector(linkSelector)
-          const $section = document.querySelector(sectionSelector)
-          console.log(linkSelector, sectionSelector, $link, $section)
-
-          $link.addEventListener("click", event => {
-            event.preventDefault()
-            clearActiveManifestos()
-            $link.classList.add("active")
-            $section.classList.add("active")
-          })
-        }
-
-        function clearActiveManifestos(){
-          [
-            ".education-link", ".business-link", ".software-link",
-            "#education", "#business", "#software",
-          ].forEach(selector => document.querySelector(selector).classList.remove("active"))
-        }
-      </script>
-    </body>
+        $link.addEventListener("click", event => {
+          event.preventDefault();
+          history.pushState({}, "", targetSelector);
+          try {
+            $target.scrollIntoView({ behavior: "smooth" });
+          } catch (_){
+            $target.scrollIntoView(true);
+          }
+        })
+      }
+    </script>
+  </body>
 </html>

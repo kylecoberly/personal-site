@@ -1,11 +1,11 @@
 footer {
-  font-size: $baseline;
-  background-color: $gray-3;
   display: flex;
   justify-content: center;
+  background-color: $gray-3;
+  font-size: $font-baseline;
+  color: $gray-8;
   padding-top: $xxl;
   padding-bottom: $xxxl;
-  color: $white;
   .content-wrapper {
     text-align: right;
     #social {

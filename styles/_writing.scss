@@ -1,6 +1,13 @@
-#writing {
+#recent-writing {
   margin-top: -230px;
-  background-color: transparentize($left-color-9, 0.5);
+  background: linear-gradient(
+    to bottom,
+    transparentize($left-color-9, 0.5),
+    transparentize($left-color-9, 0.6) 50%,
+    transparentize($left-color-9, 0.6) 50%,
+    transparentize($left-color-9, 0.5),
+  );
+  background-size: 100% $xl;
   clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 85%);
   padding: $xxxxxxxl 0; // Override to accomodate path clipping
   @media (max-width: $small-breakpoint) {
@@ -155,5 +162,72 @@
     width: 100%;
     height: 100%;
     left: 0; top: 0;
+  }
+}
+
+
+#writing {
+  > header {
+    height: auto;
+    padding: $xxxxxl;
+    position: relative;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
+    }
+  }
+  > main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: $xxxxl 0;
+    background: $white;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        padding: 0;
+      }
+    }
+  }
+  .talk {
+    margin-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: $white;
+    align-items: flex-start;
+    .details {
+      padding: 0 $large $xxl $large;
+      flex: 8;
+      @media (max-width: $medium-breakpoint) {
+        & {
+          padding: 0 $large;
+        }
+      }
+      .external-link {
+        background: url("/assets/icons/external.svg");
+        background-size: cover;
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        margin-bottom: -3px; // Visual alignment
+        margin-left: $baseline;
+      }
+      h3 {
+        margin-bottom: $xs;
+        color: $gray-1;
+      }
+      .byline {
+        color: $gray-5;
+      }
+    }
+    .icon {
+      width: $xxxxxl;
+      margin: 0;
+      padding: $large 0;
+      flex: 1;
+      #apple-line {
+        stroke: $gray-5;
+      }
+    }
   }
 }

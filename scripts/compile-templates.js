@@ -12,9 +12,8 @@ async function initialize() {
 
     Promise.all([
       writeTemplate("404"),
-      writeTemplate("about", { page: "about", isAbout: true }),
       writeTemplate("index", { page: "home", isHome: true }),
-      writeTemplate("speaking", { page: "speaking", talks: processTalks(talks), isSpeaking: true }),
+      writeTemplate("writing", { page: "writing", talks: processTalks(talks), isWriting: true }),
       createTalks(talks),
     ]).catch(logError)
 }

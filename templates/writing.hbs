@@ -1,0 +1,24 @@
+{{#extend "main"}}
+  {{#content "main"}}
+    <div class="content-wrapper">
+      <h2>Writing</h2>
+      <ul id="talks">
+        {{#each talks}}
+          <li class="talk">
+            <object type="image/svg+xml" data="{{iconUrl}}" class="icon"></object>
+            <div class="details">
+              {{#if url}}
+                <h3><a href="{{url}}" target="_BLANK">{{title}}<i class="external-link"></i></a></h3>
+              {{else}}
+                <h3><a href="/talks/{{slug}}/index.html">{{title}}</a></h3>
+              {{/if}}
+              <div class="byline">
+                <address>{{venue}}</address> – <time>{{date}}</time>
+              </div>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/content}}
+{{/extend}}

@@ -1,54 +1,28 @@
-@mixin bad-scanlines {
-    background: linear-gradient(
-        to bottom,
-        transparentize($primary-color, 0.4),
-        transparentize($primary-color, 0.4) 50%,
-        transparentize($primary-color, 0.5) 50%,
-        transparentize($primary-color, 0.5),
-    );
-    background-size: 100% $large;
-    animation: 1.5s infinite alternate scanlines;
-    @keyframes scanlines {
-      from { background-position: 0 0; }
-      to { background-position: 0 100%; }
-    }
-}
-@mixin buzzy-background {
-    background: linear-gradient(
-        to bottom,
-        transparentize($right-color-9, 0.8),
-        transparentize($right-color-9, 0.8) 50%,
-        transparentize($right-color-9, 0.9) 50%,
-        transparentize($right-color-9, 0.9),
-    );
-    background-size: 100% $large;
-    animation: 1.5s infinite buzzy-scanlines;
-    @keyframes buzzy-scanlines {
-      from { background-position: 0 0; }
-      to { background-position: 0 100%; }
-    }
-}
-
 body {
-    @include body-type;
-    background: linear-gradient(
-        to bottom,
-        lighten($primary-color, 30%),
-        lighten($primary-color, 35%) 50%,
-        lighten($primary-color, 35%) 50%,
-        lighten($primary-color, 30%),
-    );
-    background-size: 100% $xl;
-}
-
-main > section {
-  display: flex;
-  align-items: center;
-  flex-flow: column nowrap;
-  padding: $xxxxxl 0;
-  @media (max-width: $small-breakpoint) {
-    & {
-      padding: $xl 0;
+  @include body-type;
+  main > section {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: $xxxxxl 0;
+    @media (max-width: $small-breakpoint) {
+      & {
+        padding: $xl 0;
+      }
+    }
+  }
+  .content-wrapper {
+    width: 1000px;
+    @media (max-width: $medium-breakpoint) {
+      & {
+        width: 650px;
+      }
+    }
+    @media (max-width: $small-breakpoint) {
+      & {
+        width: 100%;
+        padding: $small;
+      }
     }
   }
 }
@@ -56,29 +30,48 @@ main > section {
 h1 {
   @include primary-header-type;
 }
+
 #tagline {
   @include sub-header-type;
 }
 
 h2 {
-    @include secondary-header-type;
+  @include secondary-header-type;
 }
 
 h3 {
-    @include tertiary-header-type;
+  @include tertiary-header-type;
 }
 
-.content-wrapper {
-  width: 1000px;
-  @media (max-width: $medium-breakpoint) {
-    & {
-      width: 650px;
-    }
+@mixin bad-scanlines {
+  background: linear-gradient(
+    to bottom,
+    transparentize($primary-color-5, 0.4),
+    transparentize($primary-color-5, 0.4) 50%,
+    transparentize($primary-color-5, 0.5) 50%,
+    transparentize($primary-color-5, 0.5),
+  );
+  background-size: 100% $large;
+  background-color: transparentize($primary-color-5, 0.3);
+  animation: 1.5s infinite alternate scanlines;
+  @keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
   }
-  @media (max-width: $small-breakpoint) {
-    & {
-      width: 100%;
-      padding: $small;
-    }
+}
+
+@mixin buzzy-background {
+  background: linear-gradient(
+    to bottom,
+    transparentize($right-color-9, 0.8),
+    transparentize($right-color-9, 0.8) 50%,
+    transparentize($right-color-9, 0.9) 50%,
+    transparentize($right-color-9, 0.9),
+  );
+  background-size: 100% $large;
+  animation: 1.5s infinite buzzy-scanlines;
+  @keyframes buzzy-scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
   }
 }
