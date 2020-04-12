@@ -7,10 +7,14 @@
                     <li class="talk">
                         <object type="image/svg+xml" data="{{iconUrl}}" class="icon"></object>
                         <div class="details">
+                          {{#if url}}
+                            <h3><a href="{{url}}" target="_BLANK">{{title}}<i class="external-link"></i></a></h3>
+                          {{else}}
                             <h3><a href="/talks/{{slug}}/index.html">{{title}}</a></h3>
-                            <div class="byline">
-                                <address>{{venue}}</address> – <time>{{date}}</time>
-                            </div>
+                          {{/if}}
+                          <div class="byline">
+                            <address>{{venue}}</address> – <time>{{date}}</time>
+                          </div>
                         </div>
                     </li>
                 {{/each}}

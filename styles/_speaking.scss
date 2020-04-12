@@ -29,12 +29,21 @@
     align-items: flex-start;
     .details {
       padding: 0 $large $xxl $large;
+      flex: 8;
       @media (max-width: $medium-breakpoint) {
         & {
           padding: 0 $large;
         }
       }
-      flex: 8;
+      .external-link {
+        background: url("/assets/icons/external.svg");
+        background-size: cover;
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        margin-bottom: -3px; // Visual alignment
+        margin-left: $baseline;
+      }
       h3 {
         margin-bottom: $xs;
         color: $gray-1;
