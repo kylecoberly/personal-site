@@ -1,4 +1,48 @@
 module.exports.talks = [{
+    title: "Real Agile",
+    date: "2020-04-29",
+    slug: "real-agile",
+    venue: "Denverscript",
+    videoUrl: "https://www.youtube.com/embed/XAy995JK8BI?start=3373",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/real-agile/",
+    }],
+    abstract: `
+How well were you and your team able to immediately adjust to new circumstances, new requirements, and new challenges? The quarantine is testing everyone's agility, and lots of teams are finding that the stand-ups and Jira boards they added didn't actually help them adapt. That's because agile is more than a collection of rituals and tools, it's a complete paradigm shift. In this talk, you'll learn:
+
+* How many agile mechanisms work "under the hood"
+* Which team structures and practices promote or impede agility
+* Why most "improvements" to agile frameworks rob you of their value
+* How agile practices level up your team, improve morale, and connect you to your customers
+
+Stop settling for better-than-not-doing-it results and get agile-- for real.
+  `,
+  iconUrl: "/assets/icons/briefcase.svg",
+}, {
+  title: "BDD Testing with Cypress Cucumber",
+  date: "2020-04-28",
+  slug: "bdd-testing-with-cypress-cucumber",
+  venue: "Denver Vue.js",
+  videoUrl: "https://www.youtube.com/embed/bS9Q0_uKAs8",
+  links: [{
+    label: "Example repo",
+    url: "https://github.com/kylecoberly/paper.ly",
+  },{
+    label: "Gherkin Notes",
+    url: "https://github.com/kylecoberly/knowledge/wiki/Gherkin",
+  },{
+    label: "Cypress-Cucumber Notes",
+    url: "https://github.com/kylecoberly/knowledge/wiki/Cypress-Cucumber",
+  },{
+    label: "Slides",
+    url: "https://slides.com/kylecoberly/bdd-testing-with-cypress-cucumber#/",
+  }],
+  abstract: `
+Are you ready to love testing? With the Cypress Cucumber plugin, you will. In this talk, you'll learn how to combine the power of Cypress testing with BDD assertions and Gherkin features to not only develop confidence in your Vue apps, but also get built-in documentation and a shared ubiquitous language with your users.
+  `,
+  iconUrl: "/assets/icons/computer.svg",
+}, {
     title: "Inspect #2: Handsome Jack Rugile",
     date: "2018-12-29",
     venue: "Medium",

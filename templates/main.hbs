@@ -70,15 +70,17 @@
         const $link = document.querySelector(linkSelector);
         const $target = document.querySelector(targetSelector);
 
-        $link.addEventListener("click", event => {
-          event.preventDefault();
-          history.pushState({}, "", targetSelector);
-          try {
-            $target.scrollIntoView({ behavior: "smooth" });
-          } catch (_){
-            $target.scrollIntoView(true);
-          }
-        })
+        if ($link && $target){
+          $link.addEventListener("click", event => {
+            event.preventDefault();
+            history.pushState({}, "", targetSelector);
+            try {
+              $target.scrollIntoView({ behavior: "smooth" });
+            } catch (_){
+              $target.scrollIntoView(true);
+            }
+          })
+        }
       }
     </script>
   </body>
