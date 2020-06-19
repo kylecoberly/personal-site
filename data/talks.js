@@ -1,4 +1,24 @@
 module.exports.talks = [{
+    title: "How Top-Down and Bottom-Up Management Are Different",
+    date: "2020-06-18",
+    slug: "how-top-down-and-bottom-up-management-are-different",
+    venue: "Medium",
+    iconUrl: "/assets/icons/briefcase.svg",
+    url: "https://medium.com/@kyle.coberly/how-bottom-up-and-top-down-management-are-different-e6ba7eeac63a",
+    abstract: `
+Do you treat your staff like clerks or sales people?
+  `,
+},{
+    title: "AMA with Kyle Coberly",
+    date: "2020-06-15",
+    slug: "denver-devs-ama-2020",
+    venue: "Denver Devs",
+    iconUrl: "/assets/icons/computer.svg",
+    url: "https://medium.com/@kyle.coberly/ama-with-kyle-coberly-on-denver-devs-fcb5a43844f0",
+    abstract: `
+Hello Denver Devs, my name is Kyle Coberly! I'm an educator, a business dork, and an agile product engineer. I'm currently a lead instructor at the Flatiron School, executive director of Develop Denver, and an admin at this very slack. I'm a former faculty director for Galvanize, co-host of the Sprint UX podcast, and music teacher. I'm @elysecoberly's husband, and Duncan and Miles' dad. You can read more about me at [[kylecoberly.com]] and [LinkedIn](https://www.linkedin.com/in/kylecoberly/), and for the rest of the day I encourage you to ask me anything!
+  `,
+},{
     title: "Real Agile",
     date: "2020-04-29",
     slug: "real-agile",
