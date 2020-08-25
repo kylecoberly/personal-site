@@ -1,4 +1,23 @@
 module.exports.talks = [{
+    title: "Data Transformations with Lodash",
+    date: "2020-08-25",
+    slug: "data-transformations-with-lodash",
+    venue: "DenverScript",
+    iconUrl: "/assets/icons/computer.svg",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/data-transformations-with-lodash",
+    },{
+        label: "Repo",
+        url: "https://github.com/kylecoberly/data-transformations-with-lodash",
+    },{
+        label: "Lodash Notes",
+        url: "https://github.com/kylecoberly/knowledge/wiki/lodash",
+    }],
+    abstract: `
+One of the most common day-to-day programming tasks is taking data from one format to another. Doing this procedurally with conditionals and loops is common, but brittle, error-prone, and hard to read and debug. In this talk, you'll learn how to use Lodash's FP module to build rock-solid data transformation pipelines by composing functions.
+  `,
+},{
     title: "How Top-Down and Bottom-Up Management Are Different",
     date: "2020-06-18",
     slug: "how-top-down-and-bottom-up-management-are-different",
