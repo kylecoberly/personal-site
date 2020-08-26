@@ -3,7 +3,7 @@ module.exports.talks = [{
     date: "2020-08-25",
     slug: "data-transformations-with-lodash",
     venue: "DenverScript",
-    videoUrl: "https://youtu.be/8vZ54MWQe3E?t=2454",
+    videoUrl: "https://www.youtube.com/embed/8vZ54MWQe3E?start=2452",
     iconUrl: "/assets/icons/computer.svg",
     links: [{
         label: "Slides",
