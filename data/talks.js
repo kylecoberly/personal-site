@@ -1,4 +1,28 @@
 module.exports.talks = [{
+    title: "Front-End Face/Off 4",
+    date: "2021-04-15",
+    slug: "front-end-face-off-4",
+    venue: "Denver Node",
+    videoUrl: "https://www.youtube.com/embed/8IT2OHXksSA?start=341",
+    iconUrl: "/assets/icons/computer.svg",
+    links: [{
+        label: "Repo",
+        url: "https://github.com/kylecoberly/nerd-riot",
+    }],
+    abstract: `
+Join us for the final Denver Node.js meetup as we close out with a Frontend Framework Showdown! Berto (React), Cass (Vue), and Kyle (Ember) will be showing off frameworks and how they can be used to share their favorite memories.
+  `,
+},{
+    title: "Cash, Culture, and Violence",
+    date: "2021-04-02",
+    slug: "cash-culture-and-violence",
+    venue: "Flatiron School",
+    videoUrl: "https://www.youtube.com/embed/3I9oJsoe-TI",
+    iconUrl: "/assets/icons/apple.svg",
+    abstract: `
+Given on my last day teaching at Flatiron School, I outline a philosophy of education, business, and technology.
+  `,
+},{
     title: "Data Transformations with Lodash",
     date: "2020-08-25",
     slug: "data-transformations-with-lodash",
