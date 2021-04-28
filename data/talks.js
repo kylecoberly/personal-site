@@ -4,6 +4,7 @@ module.exports.talks = [{
     slug: "quality-tooling-for-web-apps",
     venue: "DenverScript",
     iconUrl: "/assets/icons/computer.svg",
+    videoUrl: "https://www.youtube.com/embed/ezP03yeX52c?start=2255",
     links: [{
         label: "Slides",
         url: "https://slides.com/kylecoberly/quality-tooling-for-web-apps",
