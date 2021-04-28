@@ -1,4 +1,23 @@
 module.exports.talks = [{
+    title: "Quality Tooling For Web Apps",
+    date: "2021-04-27",
+    slug: "quality-tooling-for-web-apps",
+    venue: "DenverScript",
+    iconUrl: "/assets/icons/computer.svg",
+    links: [{
+        label: "Slides",
+        url: "https://slides.com/kylecoberly/quality-tooling-for-web-apps",
+    }],
+    abstract: `
+What kinds of things should a high-quality app include? In this talk, we'll do an overview of the quality tooling available for modern web apps, including:
+
+* Containers
+* Formatters and linters
+* Versioning
+* Tests
+* CI / CD pipelines
+  `,
+},{
     title: "Front-End Face/Off 4",
     date: "2021-04-15",
     slug: "front-end-face-off-4",
