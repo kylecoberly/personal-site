@@ -82,6 +82,9 @@
       padding-bottom: 0;
     }
   }
+  h2 {
+    @include hide;
+  }
   .content-wrapper {
     display: flex;
     flex-flow: column nowrap;
