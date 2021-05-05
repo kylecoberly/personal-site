@@ -26,12 +26,12 @@
       padding: $baseline $large;
       @include primary-nav-type;
       color: $white;
-      background-color: $left-color-3;
+      background-color: $left-color-1;
       box-shadow: 0 2px 2px $gray-5;
       text-decoration: none;
       transition: background-color 0.2s;
       &:hover {
-        background-color: lighten($left-color-3, 5%);
+        background-color: lighten($left-color-1, 3%);
       }
     }
   }

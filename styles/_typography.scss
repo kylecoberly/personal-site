@@ -24,7 +24,8 @@
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: $font-xxxxxxxxxxl;
-  color: $white;
+  color: transparentize($white, 0.01);
+  background-color: hsla(0, 0%, 0%, 0);
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
   a {
@@ -46,7 +47,8 @@
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: $font-xxxxl;
-  color: $white;
+  color: transparentize($white, 0.01);
+  background-color: hsla(0, 0%, 0%, 0);
   text-transform: uppercase;
   margin-left: 3px; /* Visual alignment */
   margin-top: -20px; /* Visual alignment */
@@ -117,7 +119,8 @@
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: $font-xxxl;
-  color: $white;
+  color: transparentize($white, 0.01);
+  background-color: hsla(0, 0%, 0%, 0);
   text-transform: uppercase;
   @media (max-width: $small-breakpoint) {
     & {

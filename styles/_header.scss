@@ -1,13 +1,13 @@
 @mixin bad-scanlines {
   background: linear-gradient(
     to bottom,
-    transparentize($primary-color-5, 0.4),
-    transparentize($primary-color-5, 0.4) 50%,
-    transparentize($primary-color-5, 0.5) 50%,
-    transparentize($primary-color-5, 0.5),
+    transparentize($primary-color-1, 0.4),
+    transparentize($primary-color-1, 0.4) 50%,
+    transparentize($primary-color-1, 0.5) 50%,
+    transparentize($primary-color-1, 0.5),
   );
   background-size: 100% $large;
-  background-color: transparentize($primary-color-5, 0.3);
+  background-color: transparentize($primary-color-1, 0.3);
   animation: 1.5s infinite alternate scanlines;
   @keyframes scanlines {
     from { background-position: 0 0; }
@@ -32,12 +32,14 @@ header {
     nav {
       align-self: flex-end;
       li {
-        @include primary-nav-type;
         display: inline-block;
         margin: 0;
         color: $gray-9;
         & + li {
           margin-left: $large;
+        }
+        a {
+          @include primary-nav-type;
         }
       }
     }

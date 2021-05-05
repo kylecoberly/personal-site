@@ -24,3 +24,9 @@ main > section {
     }
   }
 }
+
+@mixin hide { // Like display: none;, except accessible
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}

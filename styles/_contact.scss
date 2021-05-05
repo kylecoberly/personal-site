@@ -21,6 +21,9 @@
         padding: $small;
       }
     }
+    label {
+      @include hide;
+    }
     [type=submit] {
       @include primary-nav-type;
       color: $white;

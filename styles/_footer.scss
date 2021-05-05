@@ -11,6 +11,9 @@ footer {
     #social {
       border-bottom: 1px solid $gray-7;
       padding-bottom: $baseline;
+      .descriptive {
+        @include hide;
+      }
       li {
         display: inline-block;
         margin-left: $baseline;
