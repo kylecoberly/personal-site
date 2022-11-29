@@ -6,7 +6,7 @@
     "test": "jest --notify --watchAll",
     "build": "npm run build:clean && npm run build:style && npm run build:templates && npm run build:copy",
     "build:clean": "rm -rf dist/*",
-    "build:style": "sassc styles/app.scss dist/app.css",
+    "build:style": "sass styles/app.scss dist/app.css",
     "build:templates": "node scripts/index.js",
     "build:copy": "cp -r assets dist",
     "deploy": "npm run build && firebase deploy",
@@ -28,5 +28,8 @@
   },
   "jest": {
     "verbose": true
+  },
+  "dependencies": {
+    "sass": "^1.56.1"
   }
 }
