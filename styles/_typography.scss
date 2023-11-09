@@ -8,13 +8,6 @@
   line-height: 1.5;
   @media (max-width: $medium-breakpoint) {
     & {
-      line-height: 1.3;
-      font-size: $font-baseline;
-    }
-  }
-  @media (max-width: $small-breakpoint) {
-    & {
-      line-height: 1.2;
       font-size: $font-baseline;
     }
   }
@@ -50,14 +43,13 @@
   color: transparentize($white, 0.01);
   background-color: hsla(0, 0%, 0%, 0);
   text-transform: uppercase;
-  margin-left: 3px; /* Visual alignment */
-  margin-top: -20px; /* Visual alignment */
+  margin-left: 6px; /* Visual alignment */
   @media (max-width: $medium-breakpoint) {
     & {
-      font-size: $font-xl;
+      font-size: $font-xxl;
       margin-left: 2px; /* Visual alignment */
       margin-top: 0; /* Visual alignment */
-      margin-bottom: $xl;
+      margin-bottom: $baseline;
     }
   }
   @media (max-width: $small-breakpoint) {
@@ -122,9 +114,14 @@
   color: transparentize($white, 0.01);
   background-color: hsla(0, 0%, 0%, 0);
   text-transform: uppercase;
+  @media (max-width: $medium-breakpoint) {
+    & {
+      font-size: $font-xxl;
+    }
+  }
   @media (max-width: $small-breakpoint) {
     & {
-      font-size: $font-large;
+      font-size: $font-xl;
     }
   }
 }

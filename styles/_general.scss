@@ -2,12 +2,6 @@ main > section {
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
-  padding: $xxxxxl 0;
-  @media (max-width: $small-breakpoint) {
-    & {
-      padding: $xl 0;
-    }
-  }
 }
 
 .content-wrapper {
@@ -25,7 +19,8 @@ main > section {
   }
 }
 
-@mixin hide { // Like display: none;, except accessible
+@mixin hide {
+  // Like display: none;, except accessible
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;

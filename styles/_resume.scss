@@ -4,17 +4,21 @@
     transparentize($right-color-9, 0.8),
     transparentize($right-color-9, 0.8) 50%,
     transparentize($right-color-9, 0.9) 50%,
-    transparentize($right-color-9, 0.9),
+    transparentize($right-color-9, 0.9)
   );
   background-size: 100% $large;
   animation: 1.5s infinite buzzy-scanlines;
   @keyframes buzzy-scanlines {
-    from { background-position: 0 0; }
-    to { background-position: 0 100%; }
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 100%;
+    }
   }
 }
 
-@mixin burst-animation($name, $rotation, $top, $right){
+@mixin burst-animation($name, $rotation, $top, $right) {
   @keyframes #{$name} {
     from {
       top: 100%;
@@ -52,23 +56,28 @@
         border: 16px solid transparent;
         border-top: 16px solid $color;
         border-top-width: 16px;
-        left: 0;
-        bottom: -10px;
-        transform: rotate(-90deg) skew(-4deg) translateY(13px);
       }
     }
+  }
+}
+
+@mixin static-caret() {
+  &::before {
+    left: 0;
+    bottom: -10px;
+    transform: rotate(-90deg) skew(-4deg) translateY(13px);
   }
 }
 
 @mixin in-view-animation($name, $rotation, $top, $right) {
   position: absolute;
   top: 100%;
-  right: 50%;
+  // right: 50%;
   transform: rotateZ(0deg);
   opacity: 0;
   &.in-view {
     @include burst-animation($name, $rotation, $top, $right);
-    animation: 3s cubic-bezier(0,1,.1,.96) forwards $name;
+    animation: 3s cubic-bezier(0, 1, 0.1, 0.96) forwards $name;
   }
 }
 
@@ -76,9 +85,10 @@
   background-color: transparentize($right-color-9, 0.5);
   padding-top: 0; // Children are absolutely positioned
   position: relative;
+  overflow-y: hidden;
   @media (max-width: $small-breakpoint) {
     & {
-      padding-top: $xl;
+      padding-top: 0;
       padding-bottom: 0;
     }
   }
@@ -87,7 +97,7 @@
   }
   .content-wrapper {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     @media (max-width: $small-breakpoint) {
@@ -99,7 +109,7 @@
       position: relative;
       height: 800px; // Fixed container height
       width: 100%;
-      top: -182px; // Snug up to about page
+      top: -270px;
       @media (max-width: $medium-breakpoint) {
         & {
           height: 490px;
@@ -110,7 +120,7 @@
         & {
           height: 350px;
           top: 0;
-          overflow-y: hidden;
+          overflow: hidden;
         }
       }
       .speech-bubble {
@@ -126,11 +136,16 @@
         }
       }
       img {
-        left: -100px; // Overflow content wrapper
-        @include in-view-animation(image-burst, 0, 0, auto);
+        width: unset;
+        @include in-view-animation(image-burst, 0, 100px, auto);
+        @media (max-width: $medium-breakpoint) {
+          & {
+            @include in-view-animation(image-burst, -100px, -150px, 0);
+          }
+        }
         @media (max-width: $small-breakpoint) {
           & {
-            @include in-view-animation(image-burst, 0, -100px, 100%);
+            @include in-view-animation(image-burst, -100px, -250px, -20%);
           }
         }
       }
@@ -139,10 +154,11 @@
         font-size: $font-large;
         padding: $large;
         width: 170px;
-        @include caret(105px, -12px, 90deg, $gray-9);
+        @include caret(120px, -12px, 90deg, $gray-9);
         @include in-view-animation(cta-burst, -8deg, 306px, 650px);
         @media (max-width: $medium-breakpoint) {
           & {
+            @include caret(120px, -12px, 90deg, $gray-9);
             @include in-view-animation(cta-burst, -8deg, 150px, 450px);
           }
         }
@@ -151,7 +167,8 @@
             width: auto;
             padding: $baseline;
             font-size: $font-small;
-            @include in-view-animation(cta-burst, 0deg, 0, calc(100% - 200px));
+            @include caret(97px, -18px, 90deg, $gray-9);
+            @include in-view-animation(cta-burst, 0deg, 30px, 50%);
           }
         }
       }
@@ -165,21 +182,28 @@
         }
         @media (max-width: $small-breakpoint) {
           & {
-            @include in-view-animation(resume-burst, 0deg, 0, $small);
+            @include static-caret;
+            @include in-view-animation(resume-burst, 0deg, 20px, 7%);
           }
         }
       }
-      .work-sample {
+      .talks {
         @include caret(-28px, 41px, -36deg, $white);
-        @include in-view-animation(work-sample-burst, -3deg, 480px, 20px);
+        @include in-view-animation(work-sample-burst, -3deg, 480px, 200px);
         @media (max-width: $medium-breakpoint) {
           & {
-            @include in-view-animation(work-sample-burst, -3deg, 250px, -70px);
+            @include in-view-animation(work-sample-burst, -3deg, 250px, 100px);
           }
         }
         @media (max-width: $small-breakpoint) {
           & {
-            @include in-view-animation(work-sample-burst, 0deg, 150px, $small); // Order is flipped on mobile
+            @include static-caret;
+            @include in-view-animation(
+              work-sample-burst,
+              0deg,
+              170px,
+              7%
+            ); // Order is flipped on mobile
           }
         }
       }
@@ -188,12 +212,18 @@
         @include in-view-animation(notes-burst, 14deg, 600px, 220px);
         @media (max-width: $medium-breakpoint) {
           & {
-            @include in-view-animation(notes-burst, 14deg, 400px, 170px);
+            @include in-view-animation(notes-burst, 14deg, 400px, 120px);
           }
         }
         @media (max-width: $small-breakpoint) {
           & {
-            @include in-view-animation(notes-burst, 0deg, 75px, $small); // Order is flipped on mobile
+            @include static-caret;
+            @include in-view-animation(
+              notes-burst,
+              0deg,
+              95px,
+              7%
+            ); // Order is flipped on mobile
           }
         }
       }
